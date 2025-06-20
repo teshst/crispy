@@ -18,11 +18,5 @@ dnf5 install -y lutris
 flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 systemctl disable flatpak-add-fedora-repos.service
 
-## Install flatpaks
-flatpak install com.discordapp.Discord -y
-flatpak install com.mattjakeman.ExtensionManager -y
-flatpak install io.missioncenter.MissionCenter -y
-flatpak install com.brave.Browser
-
 ## Enabled System uni
 systemctl enable podman.socket
