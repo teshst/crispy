@@ -10,15 +10,19 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf5 install -y nvim
+dnf5 install -y steam
+dnf5 install -y lutris
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+#Add the Flathub Flatpak remote and remove the Fedora Flatpak remote
+flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+systemctl disable flatpak-add-fedora-repos.service
 
-#### Example for enabling a System Unit File
+## Install flatpaks
+flatpak install com.discordapp.Discord
+flatpak install com.mattjakeman.ExtensionManager
+flatpak install io.missioncenter.MissionCenter
+flatpak install com.brave.Browser
 
+## Enabled System uni
 systemctl enable podman.socket
