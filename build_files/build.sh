@@ -19,9 +19,9 @@ flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/fla
 systemctl disable flatpak-add-fedora-repos.service
 
 ## Install flatpaks
-flatpak install com.discordapp.Discord
-flatpak install com.mattjakeman.ExtensionManager
-flatpak install io.missioncenter.MissionCenter
+flatpak install com.discordapp.Discord -y
+flatpak install com.mattjakeman.ExtensionManager -y
+flatpak install io.missioncenter.MissionCenter -y
 flatpak install com.brave.Browser
 
 ## Enabled System uni
